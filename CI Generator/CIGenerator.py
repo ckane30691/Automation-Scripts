@@ -8,7 +8,8 @@ from reportlab.lib.pagesizes import letter
 def import_excel_data():
 	distro_file_name = raw_input("Please enter distro file name: ")
 	distrowb = openpyxl.load_workbook(distro_file_name)
-	distrosheet = distrowb.get_sheet_by_name('Sheet1')
+	distrowbArray = distrowb.get_sheet_names()
+	distrosheet = distrowb.get_sheet_by_name(distrowbArray[0])
 	jobNumber = raw_input("Please enter job #: ")
 	poNumber = raw_input("Please enter PO #: ")
 	item_desc_array = []
